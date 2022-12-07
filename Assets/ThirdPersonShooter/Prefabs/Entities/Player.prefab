@@ -40,7 +40,7 @@ AudioSource:
   m_GameObject: {fileID: 16737481858993452}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3986782437568874598, guid: 6aa53deb01c466a4eb4f27ef48cabf81, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 6349951703626728668}
   - component: {fileID: 6349951703618956140}
   m_Layer: 3
-  m_Name: Player
+  m_Name: Render
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2642,7 +2642,7 @@ AudioSource:
   m_GameObject: {fileID: 6768058117757187621}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3986782437568874598, guid: 6aa53deb01c466a4eb4f27ef48cabf81, type: 2}
   m_audioClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3047,6 +3047,10 @@ MonoBehaviour:
     range: 5
     damage: 1
     attackRate: 0.25
+  pauseAction: {fileID: 4994381750338859823, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
+  input: {fileID: 7763213047186855114}
+  hurtSource: {fileID: 3038601096455206237}
+  deathSource: {fileID: 1410517702888000169}
 --- !u!54 &1227768087452338599
 Rigidbody:
   m_ObjectHideFlags: 0
