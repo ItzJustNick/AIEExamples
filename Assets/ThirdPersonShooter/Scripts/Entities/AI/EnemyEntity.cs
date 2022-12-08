@@ -92,6 +92,7 @@ namespace ThirdPersonShooter.Entities.AI
 			animator.SetTrigger(deadHash);
 			collider.enabled = false;
 			deathSource.Play();
+			player.AddScore(value);
 		}
 
 		private void OnPlayerDied()

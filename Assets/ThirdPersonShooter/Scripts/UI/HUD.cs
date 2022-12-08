@@ -20,8 +20,9 @@ namespace ThirdPersonShooter.UI
 		{
 			player = GameManager.IsValid() ? GameManager.Instance.Player : FindObjectOfType<PlayerEntity>();
 			
-			player.Stats.onHealthChanged -= OnHealthChanged;
-			player.Stats.onDeath -= OnPlayerDied;
+			player.Stats.onHealthChanged += OnHealthChanged;
+			player.Stats.onDeath += OnPlayerDied;
+			player.onScroreUpdated += OnScoreUpdated;
 
 			healthBar.maxValue = player.Stats.MaxHealth;
 			healthBar.value = player.Stats.Health;
@@ -31,10 +32,13 @@ namespace ThirdPersonShooter.UI
 		{
 			player.Stats.onHealthChanged -= OnHealthChanged;
 			player.Stats.onDeath -= OnPlayerDied;
+			player.onScroreUpdated -= OnScoreUpdated;
 		}
 
 		private void OnHealthChanged(float _health) => healthBar.value = _health;
 		
-		private void OnPlayerDied() => UIManager.ShowMenu("GameOver");
+		private void OnPlayerDied() => UIManager.ShowMenu("Game Over");
+
+		private void OnScoreUpdated(int _score) => scoreText.text = $"Score: {_score}";
 	}
 }

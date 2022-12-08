@@ -1342,6 +1342,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4606936890826357457, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
+      propertyPath: m_Speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606936890826357457, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
       propertyPath: m_Height
       value: 1.62
       objectReference: {fileID: 0}
@@ -1366,8 +1370,12 @@ PrefabInstance:
       value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 7607615914044943326, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1145034327181502019}
+    - target: {fileID: 7607615914044943326, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
       propertyPath: stats.range
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7607615914044943326, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
       propertyPath: stats.maxHealth

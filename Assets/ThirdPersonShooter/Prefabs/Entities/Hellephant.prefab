@@ -910,6 +910,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4606936890826357457, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606936890826357457, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
       propertyPath: m_Radius
       value: 2
       objectReference: {fileID: 0}
@@ -937,6 +941,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 502528690820559017}
+    - target: {fileID: 7607615914044943326, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
+      propertyPath: stats.range
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7607615914044943326, guid: 2fa0963de837f254d8d127f022f0fdac, type: 3}
       propertyPath: stats.speed
       value: 1
