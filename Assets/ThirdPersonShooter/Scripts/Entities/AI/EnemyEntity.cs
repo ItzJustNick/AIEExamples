@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 namespace ThirdPersonShooter.Entities.AI
 {
-	public class EnemeyEntity : MonoBehaviour, IEntity
+	public class EnemyEntity : MonoBehaviour, IEntity
 	{
 		private static readonly int deadHash = Animator.StringToHash("Dead");
 		private static readonly int playerDeadHash = Animator.StringToHash("PlayerDead");
@@ -38,6 +38,8 @@ namespace ThirdPersonShooter.Entities.AI
 		private void Start()
 		{
 			stats.Start();
+			stats.onDeath += OnDied;
+			stats.onHealthChanged += OnDamaged;
 
 			agent = gameObject.GetComponent<NavMeshAgent>();
 			agent.speed = stats.Speed;
@@ -45,6 +47,14 @@ namespace ThirdPersonShooter.Entities.AI
 			collider = gameObject.GetComponent<CapsuleCollider>();
 
 			player = GameManager.IsValid() ? GameManager.Instance.Player : FindObjectOfType<PlayerEntity>();
+			player.Stats.onDeath += OnPlayerDied;
+		}
+
+		private void OnDestroy()
+		{
+			stats.onDeath -= OnDied;
+			stats.onHealthChanged -= OnDamaged;
+			player.Stats.onDeath -= OnPlayerDied;
 		}
 
 		private void Update()
@@ -73,6 +83,22 @@ namespace ThirdPersonShooter.Entities.AI
 			yield return new WaitForSeconds(stats.AttackRate);
 
 			isAttackCooling = false;
+		}
+
+		private void OnDamaged(float _health) => hurtSource.Play();
+
+		private void OnDied()
+		{
+			animator.SetTrigger(deadHash);
+			collider.enabled = false;
+			deathSource.Play();
+		}
+
+		private void OnPlayerDied()
+		{
+			animator.SetTrigger(playerDeadHash);
+			isPlayerDead = true;
+			agent.ResetPath();
 		}
 	}
 }

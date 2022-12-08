@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootAction: {fileID: -4565605898938321883, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
   shootPoint: {fileID: 6349951703626728586}
+  bulletLine: {fileID: 6421456682009025394, guid: 9d3a7231c0340e847865a43d0eca965f, type: 3}
 --- !u!1 &6349951703626373280
 GameObject:
   m_ObjectHideFlags: 0

@@ -1226,6 +1226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1459386504431782474}
   - component: {fileID: 1459386504424007136}
+  - component: {fileID: 1868574550086626075}
   m_Layer: 0
   m_Name: ZomBear
   m_TagString: Untagged
@@ -1259,7 +1260,7 @@ Animator:
   m_GameObject: {fileID: 1459386504431294058}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb008fc7c89419f42863f93463edeff3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1268,6 +1269,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1868574550086626075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459386504431294058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a106af1e80d84221b674d9be52a5679a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sinkTime: 1
+  sinkAmount: 1
+  parent: {fileID: 1459386504431782474}
 --- !u!1001 &3686478759202494042
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,10 +1,10 @@
 ﻿using JetBrains.Annotations;
 
-using System;
 using System.Collections;
 
 using ThirdPersonShooter.Entities.AI;
 using ThirdPersonShooter.Utilities;
+using ThirdPersonShooter.VFX;
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +15,7 @@ namespace ThirdPersonShooter.Entities.Player
 	{
 		[SerializeField] private InputActionReference shootAction;
 		[SerializeField] private Transform shootPoint;
+		[SerializeField] private BulletLine bulletLine;
 
 		[CanBeNull] private IEntity player;
 
@@ -28,10 +29,14 @@ namespace ThirdPersonShooter.Entities.Player
 			{
 				bool didHit = Physics.Raycast(shootPoint.position, shootPoint.forward, out RaycastHit hit, player.Stats.Range);
 
-				if(didHit && hit.collider.TryGetComponent(out EnemeyEntity entity))
+				if(didHit && hit.collider.TryGetComponent(out EnemyEntity entity))
 				{
 					entity.Stats.TakeDamage(player.Stats.Damage);
 				}
+
+				BulletLine newLine = Instantiate(bulletLine);
+				newLine.Play(shootPoint.position, didHit ? hit.point : shootPoint.position + shootPoint.forward * player.Stats.Range, didHit);
+				StartCoroutine(ShootCooldown_CR());
 			}
 		}
 
