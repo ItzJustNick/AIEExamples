@@ -17,13 +17,17 @@ namespace ThirdPersonShooter.Entities.Player
 
 		[Header("Components")]
 		[SerializeField] private PlayerInput input;
-
+		[SerializeField] private Weapon weapon;
 		[SerializeField] private AudioSource hurtSource;
 		[SerializeField] private AudioSource deathSource;
 		
 		private void Awake()
 		{
 			stats.Start();
+			stats.onDeath += OnDeath;
+			stats.onHealthChanged += OnHealthChanged;
+			
+			weapon.SetPlayer(this);
 
 			if(GameManager.IsValid())
 			{
@@ -34,6 +38,12 @@ namespace ThirdPersonShooter.Entities.Player
 			{
 				input.uiInputModule = UIManager.Instance.inputModule;
 			}
+		}
+
+		private void OnDestroy()
+		{
+			stats.onDeath -= OnDeath;
+			stats.onHealthChanged -= OnHealthChanged;
 		}
 
 		private void OnEnable()
@@ -53,5 +63,9 @@ namespace ThirdPersonShooter.Entities.Player
 				GameManager.Instance.TogglePaused();
 			}
 		}
+
+		private void OnDeath() => deathSource.Play();
+
+		private void OnHealthChanged(float _health) => hurtSource.Play();
 	}
 }

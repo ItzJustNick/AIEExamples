@@ -136,6 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4185179731075440896}
+  - component: {fileID: 5190226044121327884}
   m_Layer: 3
   m_Name: Weapon
   m_TagString: Player
@@ -157,6 +158,20 @@ Transform:
   m_Father: {fileID: 7763213048281135050}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5190226044121327884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149739889535262466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ad42a52c7548c2a8140ad25e429959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootAction: {fileID: -4565605898938321883, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
+  shootPoint: {fileID: 6349951703626728586}
 --- !u!1 &6349951703626373280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,6 +3064,7 @@ MonoBehaviour:
     attackRate: 0.25
   pauseAction: {fileID: 4994381750338859823, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
   input: {fileID: 7763213047186855114}
+  weapon: {fileID: 5190226044121327884}
   hurtSource: {fileID: 3038601096455206237}
   deathSource: {fileID: 1410517702888000169}
 --- !u!54 &1227768087452338599
