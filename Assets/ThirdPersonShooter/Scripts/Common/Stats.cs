@@ -12,6 +12,7 @@ namespace ThirdPersonShooter
 		public float Range => range;
 		public float Damage => damage;
 		public float AttackRate => attackRate;
+		public int MaxAmmo => maxAmmo;
 
 		public float Health { get; private set; }
 		public float SpeedModifier { get; set; }
@@ -25,6 +26,7 @@ namespace ThirdPersonShooter
 		[SerializeField] private float range;
 		[SerializeField] private float damage;
 		[SerializeField] private float attackRate;
+		[SerializeField] private int maxAmmo;
 
 		public void Start()
 		{

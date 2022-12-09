@@ -13,6 +13,7 @@ namespace ThirdPersonShooter.Entities.Player
 		public Vector3 Position => transform.position;
 
 		public Action<int> onScroreUpdated;
+		public Action<int> onAmmoUpdated;
 		
 		[SerializeField] private Stats stats;
 		[SerializeField] private InputActionReference pauseAction;
@@ -25,12 +26,42 @@ namespace ThirdPersonShooter.Entities.Player
 
 		private int score;
 
+		public int ammo;
+		public bool isNeedReload;
+
 		public void AddScore(int _value)
 		{
 			score += _value;
 			onScroreUpdated?.Invoke(score);
 		}
-		
+
+		public void LowerAmmo()
+		{
+			if(isNeedReload)
+			{
+				return;
+			}
+			
+			ammo -= 1;
+
+			if(ammo <= 0)
+			{
+				isNeedReload = true;
+			}
+			
+		}
+
+		public void UpdateAmmoCount()
+		{
+			onAmmoUpdated?.Invoke(ammo);
+		}
+
+		private void Start()
+		{
+			ammo = stats.MaxAmmo;
+			UpdateAmmoCount();
+		}
+
 		private void Awake()
 		{
 			stats.Start();

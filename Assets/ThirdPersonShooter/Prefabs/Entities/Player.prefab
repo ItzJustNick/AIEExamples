@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootAction: {fileID: -4565605898938321883, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
+  reloadAction: {fileID: 0}
   shootPoint: {fileID: 6349951703626728586}
   bulletLine: {fileID: 6421456682009025394, guid: 9d3a7231c0340e847865a43d0eca965f, type: 3}
 --- !u!1 &6349951703626373280
@@ -3063,11 +3064,14 @@ MonoBehaviour:
     range: 5
     damage: 1
     attackRate: 0.25
+    maxAmmo: 30
   pauseAction: {fileID: 4994381750338859823, guid: 75dd1b38d72fff846bb5dda9077563df, type: 3}
   input: {fileID: 7763213047186855114}
   weapon: {fileID: 5190226044121327884}
   hurtSource: {fileID: 3038601096455206237}
   deathSource: {fileID: 1410517702888000169}
+  ammo: 0
+  isNeedReload: 0
 --- !u!54 &1227768087452338599
 Rigidbody:
   m_ObjectHideFlags: 0
