@@ -1,4 +1,5 @@
-+#pragma once
+#pragma once
+#include <string>
 
 namespace aie
 {
@@ -41,6 +42,7 @@ namespace aie
         virtual void drawText(Font* font, const char* text, float xPos, float yPos, float depth = 0.0f);
 
         // sets the tint colour for all subsequent draw calls
+        void setRenderColourString(std::string colour, float a);
         void setRenderColour(float r, float g, float b, float a = 1.0f);
         void setRenderColour(unsigned int colour);
 

@@ -750,6 +750,118 @@ namespace aie
         return m_currentTexture++;
     }
 
+    //void Renderer2D::setRenderColourString(std::string colour, float a)
+    //{
+    //    switch (colour)
+    //    {
+    //    case "red":
+    //        {
+    //            m_r = 255;
+    //            m_g = 0;
+    //            m_b = 0;
+    //            m_a = a;
+    //            break;
+    //        }
+    //    
+    //    case "blue":
+    //        {
+    //            m_r = 0;
+    //            m_g = 0;
+    //            m_b = 255;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "green":
+    //        {
+    //            m_r = 0;
+    //            m_g = 255;
+    //            m_b = 0;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "yellow":
+    //        {
+    //            m_r = 255;
+    //            m_g = 255;
+    //            m_b = 0;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "orange":
+    //        {
+    //            m_r = 255;
+    //            m_g = 153;
+    //            m_b = 51;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "cyan":
+    //        {
+    //            m_r = 0;
+    //            m_g = 255;
+    //            m_b = 255;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "purple":
+    //        {
+    //            m_r = 153;
+    //            m_g = 51;
+    //            m_b = 255;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "pink":
+    //        {
+    //            m_r = 255;
+    //            m_g = 0;
+    //            m_b = 255;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "white":
+    //        {
+    //            m_r = 255;
+    //            m_g = 255;
+    //            m_b = 255;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "grey":
+    //        {
+    //            m_r = 160;
+    //            m_g = 160;
+    //            m_b = 160;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    case "black":
+    //        {
+    //            m_r = 0;
+    //            m_g = 0;
+    //            m_b = 0;
+    //            m_a = a;
+    //            break;
+    //        }
+//
+    //    default:
+    //        m_r = 255;
+    //        m_g = 255;
+    //        m_b = 255;
+    //        m_a = a;
+    //        break;
+    //    }
+    //}
+
     void Renderer2D::setRenderColour(float r, float g, float b, float a)
     {
         m_r = r;

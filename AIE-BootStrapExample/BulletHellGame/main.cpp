@@ -5,8 +5,11 @@ int main() {
 	// allocation
 	auto app = new Application2D();
 
+	int m_windowWidth = 1280;
+	int m_windowHeight = 720;
+	
 	// initialise and loop
-	app->run("AIE", 1280, 720, false);
+	app->run("AIE", m_windowWidth, m_windowHeight, false);
 
 	// deallocation
 	delete app;
