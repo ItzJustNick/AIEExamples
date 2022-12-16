@@ -1,7 +1,10 @@
 #pragma once
 
+#include <list>
+
 #include "Application.h"
 #include "Renderer2D.h"
+#include "Player.h"
 
 class Application2D : public aie::Application
 {
@@ -18,16 +21,11 @@ public:
     aie::Renderer2D* getRenderer() { return m_2dRenderer; }
 
 protected:
-    aie::Renderer2D* m_2dRenderer;
-    aie::Texture* m_shipTexture;
-    aie::Texture* m_texture;
-    aie::Font* m_font;
+    aie::Renderer2D* m_2dRenderer{};
+    aie::Texture* m_texture{};
+    aie::Font* m_font{};
 
-    float m_rotDirection;
-        
-    float m_playerPosX;
-    float m_playerPosY;
+    std::list<Player>* m_playerList;
 
-    int m_playerMoveSpeed;
-    int m_playerRotSpeed;
+    Player* m_player;
 };
