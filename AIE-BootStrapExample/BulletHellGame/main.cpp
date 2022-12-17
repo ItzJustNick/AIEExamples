@@ -9,7 +9,7 @@ int main() {
 	int m_windowHeight = 720;
 	
 	// initialise and loop
-	app->run("AIE", m_windowWidth, m_windowHeight, false);
+	app->run("Bullet Hell", m_windowWidth, m_windowHeight, false);
 
 	// deallocation
 	delete app;

@@ -24,8 +24,7 @@ protected:
     aie::Renderer2D* m_2dRenderer{};
     aie::Texture* m_texture{};
     aie::Font* m_font{};
-
-    std::list<Player>* m_playerList;
-
-    Player* m_player;
+    
+    aie::Player* m_player;
+    aie::Player* m_player2;
 };
